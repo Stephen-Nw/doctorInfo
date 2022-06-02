@@ -18,6 +18,8 @@ doctor_info = requests.get(DOCTOR_ENDPOINT, params=doctor_parameters)
 doctor_info.raise_for_status()
 doctors = doctor_info.json()
 
+number_of_doctors = doctors[0]
 
-print(f"Returning the first {MAX_LIST} dpctors")
+
+print(f"Returning the first {number_of_doctors} doctors")
 print(doctors)
