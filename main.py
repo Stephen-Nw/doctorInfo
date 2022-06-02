@@ -19,7 +19,11 @@ doctor_info.raise_for_status()
 doctors_data = doctor_info.json()
 
 number_of_doctors = doctors_data[0]
+doctors = doctors_data[3]
 
 
 print(f"Returning the first {number_of_doctors} doctors")
-print(doctors_data)
+print(doctors)
+
+# for item in doctors_data:
+#     print(f"{doctors_data.index(item)} - {item}")
