@@ -1,3 +1,4 @@
+from urllib.error import HTTPError
 import requests
 
 DOCTOR_NAME = input("Enter the doctor name: \n")
@@ -14,16 +15,20 @@ doctor_parameters = {
     "q": DOCTOR_QUALIFIER
 }
 
-doctor_info = requests.get(DOCTOR_ENDPOINT, params=doctor_parameters)
-doctor_info.raise_for_status()
-doctors_data = doctor_info.json()
+try:
+    raw_data = requests.get(DOCTOR_ENDPOINT, params=doctor_parameters)
+    raw_data.raise_for_status()
+except requests.exceptions.HTTPError as err:
+    print(err)
+else:
+    doctors_data = raw_data.json()
 
-number_of_doctors = doctors_data[0]
-doctors = doctors_data[3]
+    number_of_doctors = doctors_data[0]
+    doctors = doctors_data[3]
 
-
-print(f"Returning the first {number_of_doctors} doctors")
-print(doctors)
+    print("================================================")
+    print(f"Returning the first {number_of_doctors} doctors")
+    print(doctors)
 
 # for item in doctors_data:
 #     print(f"{doctors_data.index(item)} - {item}")
