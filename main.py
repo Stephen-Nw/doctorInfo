@@ -23,11 +23,9 @@ else:
     clean_doctor_list = []
     doctors_data = raw_data.json()
 
-    # number_of_doctors = doctors_data[0]
     original_list_of_doctors = doctors_data[3]
 
     print("================================================")
-    # print(f"Returning the first {number_of_doctors} doctors")
     print(original_list_of_doctors)
 
     for doctor in original_list_of_doctors:
@@ -35,6 +33,7 @@ else:
         if DOCTOR_LAST_NAME in doctor[0]:
             clean_doctor_list.append(doctor)
     print("***************************************************")
+    print(f"Returning the first {len(clean_doctor_list)} doctors")
     print(clean_doctor_list)
     print(len(clean_doctor_list))
 
