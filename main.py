@@ -1,6 +1,6 @@
 import requests
 
-DOCTOR_LAST_NAME = input("Enter the doctor's last name: \n")
+DOCTOR_LAST_NAME = input("Enter the doctor's last name: \n").upper()
 DOCTOR_QUALIFIER = input("Enter city, state, or zip code: \n")
 MAX_LIST = 5
 
@@ -31,6 +31,7 @@ else:
     print(original_list_of_doctors)
 
     for doctor in original_list_of_doctors:
+        print(DOCTOR_LAST_NAME)
         if DOCTOR_LAST_NAME in doctor[0]:
             clean_doctor_list.append(doctor)
     print("***************************************************")
