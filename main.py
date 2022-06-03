@@ -29,13 +29,11 @@ else:
     print(original_list_of_doctors)
 
     for doctor in original_list_of_doctors:
-        print(DOCTOR_LAST_NAME)
         if DOCTOR_LAST_NAME in doctor[0]:
             clean_doctor_list.append(doctor)
     print("***************************************************")
     print(f"Returning the first {len(clean_doctor_list)} doctors")
     print(clean_doctor_list)
-    print(len(clean_doctor_list))
 
 
 # for item in doctors_data:
