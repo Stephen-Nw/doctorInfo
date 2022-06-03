@@ -34,7 +34,3 @@ else:
     print("***************************************************")
     print(f"Returning the first {len(clean_doctor_list)} doctors")
     print(clean_doctor_list)
-
-
-# for item in doctors_data:
-#     print(f"{doctors_data.index(item)} - {item}")
