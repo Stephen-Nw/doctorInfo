@@ -1,4 +1,3 @@
-from urllib.error import HTTPError
 import requests
 
 DOCTOR_LAST_NAME = input("Enter the doctor's last name: \n")
