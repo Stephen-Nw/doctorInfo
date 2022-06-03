@@ -21,14 +21,23 @@ try:
 except requests.exceptions.HTTPError as err:
     print(err)
 else:
+    clean_doctor_list = []
     doctors_data = raw_data.json()
 
-    number_of_doctors = doctors_data[0]
-    doctors = doctors_data[3]
+    # number_of_doctors = doctors_data[0]
+    original_list_of_doctors = doctors_data[3]
 
     print("================================================")
-    print(f"Returning the first {number_of_doctors} doctors")
-    print(doctors)
+    # print(f"Returning the first {number_of_doctors} doctors")
+    print(original_list_of_doctors)
+
+    for doctor in original_list_of_doctors:
+        if "KING" in doctor[0]:
+            clean_doctor_list.append(doctor)
+    print("***************************************************")
+    print(clean_doctor_list)
+    print(len(clean_doctor_list))
+
 
 # for item in doctors_data:
 #     print(f"{doctors_data.index(item)} - {item}")
