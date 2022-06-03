@@ -1,7 +1,7 @@
 from urllib.error import HTTPError
 import requests
 
-DOCTOR_NAME = input("Enter the doctor name: \n")
+DOCTOR_LAST_NAME = input("Enter the doctor's last name: \n")
 DOCTOR_QUALIFIER = input("Enter city, state, or zip code: \n")
 MAX_LIST = 5
 
@@ -10,7 +10,7 @@ DOCTOR_ENDPOINT = "https://clinicaltables.nlm.nih.gov/api/npi_idv/v3/search"
 
 
 doctor_parameters = {
-    "terms": DOCTOR_NAME,
+    "terms": DOCTOR_LAST_NAME,
     "maxList": MAX_LIST,
     "q": DOCTOR_QUALIFIER
 }
@@ -32,7 +32,7 @@ else:
     print(original_list_of_doctors)
 
     for doctor in original_list_of_doctors:
-        if "KING" in doctor[0]:
+        if DOCTOR_LAST_NAME in doctor[0]:
             clean_doctor_list.append(doctor)
     print("***************************************************")
     print(clean_doctor_list)
