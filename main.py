@@ -26,12 +26,17 @@ def doctor_list():
 
         original_list_of_doctors = doctors_data[3]
 
-        clean_doctor_list = [
-            doctor for doctor in original_list_of_doctors if DOCTOR_LAST_NAME in doctor[0]]
+        if len(original_list_of_doctors) == 0:
+            # placeholder - redirect to a No results found page
+            return ("No results found")
+        else:
 
-        print(f"Returning the first {len(clean_doctor_list)} doctors")
+            clean_doctor_list = [
+                doctor for doctor in original_list_of_doctors if DOCTOR_LAST_NAME in doctor[0]]
 
-    return clean_doctor_list
+            print(f"Returning the first {len(clean_doctor_list)} doctors")
+
+            return clean_doctor_list
 
 
 a = doctor_list()
