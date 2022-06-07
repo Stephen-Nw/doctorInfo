@@ -30,4 +30,9 @@ def doctor_list():
             doctor for doctor in original_list_of_doctors if DOCTOR_LAST_NAME in doctor[0]]
 
         print(f"Returning the first {len(clean_doctor_list)} doctors")
-        print(clean_doctor_list)
+
+    return clean_doctor_list
+
+
+a = doctor_list()
+print(a)
