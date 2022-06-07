@@ -2,6 +2,7 @@ import requests
 
 
 def doctor_list():
+    """Retrieve a list of providers who match the criteria specified by the user"""
 
     DOCTOR_LAST_NAME = input("Enter the doctor's last name: \n").upper()
     DOCTOR_QUALIFIER = input("Enter city, state, or zip code: \n")
