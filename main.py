@@ -46,7 +46,7 @@ def doctor_list():
 
 
 def doctor_dictionary():
-
+    """Convert doctor list into a list of dictionaries"""
     doctor_attributes = ['Name', 'NPI', 'Specialty', 'Address']
     list_of_doctors = doctor_list()
 
