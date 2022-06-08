@@ -40,10 +40,6 @@ def doctor_list():
             return clean_doctor_list
 
 
-# a = doctor_list()
-# print(a)
-
-
 def doctor_dictionary():
 
     doctor_attributes = ['Name', 'NPI', 'Specialty', 'Address']
@@ -57,5 +53,5 @@ def doctor_dictionary():
     return final_doctor_list
 
 
-dd = doctor_dictionary()
-print(dd)
+retrieved_doctors = doctor_dictionary()
+print(retrieved_doctors)
