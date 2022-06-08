@@ -40,5 +40,22 @@ def doctor_list():
             return clean_doctor_list
 
 
-a = doctor_list()
-print(a)
+# a = doctor_list()
+# print(a)
+
+
+def doctor_dictionary():
+
+    doctor_attributes = ['Name', 'NPI', 'Specialty', 'Address']
+    list_of_doctors = doctor_list()
+
+    final_doctor_list = []
+    for doctor in list_of_doctors:
+        doctor_dictionary_conversion = dict(zip(doctor_attributes, doctor))
+        final_doctor_list.append(doctor_dictionary_conversion)
+    # print(final_doctor_list)
+    return final_doctor_list
+
+
+dd = doctor_dictionary()
+print(dd)
