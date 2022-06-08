@@ -29,7 +29,7 @@ def doctor_list():
 
         if len(original_list_of_doctors) == 0:
             # placeholder - redirect to a No results found page
-            return ("No results found")
+            return False
         else:
 
             clean_doctor_list = [
@@ -45,12 +45,14 @@ def doctor_dictionary():
     doctor_attributes = ['Name', 'NPI', 'Specialty', 'Address']
     list_of_doctors = doctor_list()
 
-    final_doctor_list = []
-    for doctor in list_of_doctors:
-        doctor_dictionary_conversion = dict(zip(doctor_attributes, doctor))
-        final_doctor_list.append(doctor_dictionary_conversion)
-    # print(final_doctor_list)
-    return final_doctor_list
+    if list_of_doctors != False:
+        final_doctor_list = []
+        for doctor in list_of_doctors:
+            doctor_dictionary_conversion = dict(zip(doctor_attributes, doctor))
+            final_doctor_list.append(doctor_dictionary_conversion)
+        return final_doctor_list
+    else:
+        return "No results found"
 
 
 retrieved_doctors = doctor_dictionary()
