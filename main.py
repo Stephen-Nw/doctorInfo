@@ -5,6 +5,11 @@ def doctor_list():
     """Retrieve a list of providers who match the criteria specified by the user"""
 
     DOCTOR_LAST_NAME = input("Enter the doctor's last name: \n").upper()
+
+    if " " in DOCTOR_LAST_NAME:
+        doctor_name_split = DOCTOR_LAST_NAME.split(" ")
+        DOCTOR_LAST_NAME = doctor_name_split[-1]
+
     DOCTOR_QUALIFIER = input("Enter city, state, or zip code: \n")
     MAX_LIST = 5
 
